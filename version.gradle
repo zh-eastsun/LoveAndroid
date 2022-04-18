@@ -1,0 +1,36 @@
+ext {
+    def navigation_version = "2.3.0"
+    def retrofit_version = "2.9.0"
+    def kotlin_coroutines_version = "1.5.0"
+    def androidx_lifecycle_version = "2.4.1"
+    deps = [
+            // retrofit
+            "retrofit" : "com.squareup.retrofit2:retrofit:$retrofit_version",
+            "converter-gson" : "com.squareup.retrofit2:converter-gson:$retrofit_version",
+
+            // kotlin coroutines
+            "coroutines-core" : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_version",
+            "coroutines-android" : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version",
+
+            // androidx
+            "activity-ktx" : "androidx.activity:activity-ktx:1.2.3",
+            "lifecycle-runtime-ktx" : "androidx.lifecycle:lifecycle-runtime-ktx:$androidx_lifecycle_version",
+            "lifecycle-viewmodel-ktx" : "androidx.lifecycle:lifecycle-viewmodel-ktx:$androidx_lifecycle_version",
+
+            // jetpack
+            // navigation
+            "navigation-fragment-ktx" : "androidx.navigation:navigation-fragment-ktx:$navigation_version",
+            "navigation-ui-ktx" : "androidx.navigation:navigation-ui-ktx:$navigation_version",
+            "navigation-common-ktx" : "android.arch.navigation:navigation-common-ktx:$navigation_version",
+            "navigation-runtime-ktx" : "android.arch.navigation:navigation-runtime-ktx:$navigation_version",
+            "navigation-dynamic-features-fragment" : "androidx.navigation:navigation-dynamic-features-fragment:$navigation_version",
+    ]
+
+    android = [
+            "compileSdkVersion" : 31,
+            "minSdkVersion" : 23,
+            "targetSdkVersion" : 31,
+            "versionCode" : 1,
+            "versionName" : "1.0.0"
+    ]
+}
