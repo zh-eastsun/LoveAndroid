@@ -34,6 +34,8 @@
             android:id="@+id/bottom_navigation_view_launcher"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            app:menu="@menu/bottom_tab_launcher_menu"/>
+            app:menu="@menu/bottom_tab_launcher_menu"
+            app:itemIconTint="@color/bottom_nav_selector"
+            app:itemTextColor="@color/bottom_nav_selector"/>
     </LinearLayout>
 </layout>
