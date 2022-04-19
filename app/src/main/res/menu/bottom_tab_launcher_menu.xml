@@ -14,4 +14,9 @@
         android:id="@+id/official_fragment"
         android:icon="@drawable/tab_official_icon"
         android:title="@string/tab_official_text" />
+
+    <item
+        android:id="@+id/system_fragment"
+        android:icon="@drawable/tab_system_icon"
+        android:title="@string/tab_system_text"/>
 </menu>

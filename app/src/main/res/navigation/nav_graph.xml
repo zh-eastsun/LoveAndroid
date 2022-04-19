@@ -24,4 +24,10 @@
         android:name="com.zdy.android.app.loveandroid.ui.fragment.official.OfficialFragment"
         android:label="official_fragment"
         tools:layout="@layout/fragment_official"/>
+
+    <fragment
+        android:id="@+id/system_fragment"
+        android:name="com.zdy.android.app.loveandroid.ui.fragment.system.SystemFragment"
+        android:label="system_fragment"
+        tools:layout="@layout/fragment_system"/>
 </navigation>

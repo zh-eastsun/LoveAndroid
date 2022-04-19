@@ -1,4 +1,4 @@
-package com.zdy.android.app.loveandroid.ui.fragment.official
+package com.zdy.android.app.loveandroid.ui.fragment.system
 
 import androidx.fragment.app.viewModels
 import com.zdy.android.app.loveandroid.BR
@@ -7,19 +7,18 @@ import com.zdy.android.app.loveandroid.base.BaseFragment
 import com.zdy.android.app.loveandroid.base.binding.DataBindingConfig
 
 /**
- * 公众号页面
+ * 体系页面
  *
  * @date 2022/04/20
  * @author zhangdongyang
  */
-class OfficialFragment : BaseFragment() {
+class SystemFragment : BaseFragment(){
 
-    // 业务自己的ViewModel
-    private val officialViewModel: OfficialViewModel by viewModels()
+    private val systemViewModel: SystemViewModel by viewModels()
 
     override fun getDataBindingConfig(): DataBindingConfig = DataBindingConfig(
-        R.layout.fragment_official,
-        BR.officialFragmentViewModel,
-        officialViewModel
+        R.layout.fragment_system,
+        BR.systemFragmentViewModel,
+        systemViewModel
     )
 }

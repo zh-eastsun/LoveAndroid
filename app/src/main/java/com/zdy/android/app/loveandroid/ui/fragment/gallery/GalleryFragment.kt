@@ -6,6 +6,12 @@ import com.zdy.android.app.loveandroid.R
 import com.zdy.android.app.loveandroid.base.BaseFragment
 import com.zdy.android.app.loveandroid.base.binding.DataBindingConfig
 
+/**
+ * 导航页面
+ *
+ * @date 2022/04/19
+ * @author zhangdongyang
+ */
 class GalleryFragment : BaseFragment() {
 
     // 业务自己的ViewModel

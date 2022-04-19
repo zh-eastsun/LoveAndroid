@@ -7,4 +7,5 @@
     <string name="tab_host_text">主页</string>
     <string name="tab_gallery_text">广场</string>
     <string name="tab_official_text">公众号</string>
+    <string name="tab_system_text">体系</string>
 </resources>
