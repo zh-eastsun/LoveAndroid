@@ -4,7 +4,7 @@
 
     <data>
         <variable
-            name="hostFragmentViewModel"
+            name="hostViewModel"
             type="com.zdy.android.app.loveandroid.ui.fragment.host.HostViewModel" />
     </data>
 

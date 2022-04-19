@@ -5,7 +5,7 @@
     <data>
         <!--视图对应的ViewModel-->
         <variable
-            name="galleryFragmentViewModel"
+            name="galleryViewModel"
             type="com.zdy.android.app.loveandroid.ui.fragment.gallery.GalleryViewModel" />
     </data>
 
