@@ -4,7 +4,7 @@
 
     <data>
         <variable
-            name="systemModel"
+            name="systemViewModel"
             type="com.zdy.android.app.loveandroid.ui.fragment.system.SystemViewModel" />
     </data>
 
