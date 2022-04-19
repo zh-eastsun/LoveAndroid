@@ -30,4 +30,10 @@
         android:name="com.zdy.android.app.loveandroid.ui.fragment.system.SystemFragment"
         android:label="system_fragment"
         tools:layout="@layout/fragment_system"/>
+
+    <fragment
+        android:id="@+id/project_fragment"
+        android:name="com.zdy.android.app.loveandroid.ui.fragment.project.ProjectFragment"
+        android:label="project_fragment"
+        tools:layout="@layout/fragment_project"/>
 </navigation>
