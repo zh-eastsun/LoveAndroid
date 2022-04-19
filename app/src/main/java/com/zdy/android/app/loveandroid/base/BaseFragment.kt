@@ -16,19 +16,14 @@ import com.zdy.android.app.loveandroid.R
 import com.zdy.android.app.loveandroid.base.binding.DataBindingConfig
 
 abstract class BaseFragment : Fragment() {
+
     private var tvStrictModeTip: TextView? = null
-    private var fragmentProvider: ViewModelProvider? = null
-    private var activityProvider: ViewModelProvider? = null
-    private var applicationProvider: ViewModelProvider? = null
+    private var activityProvider: ViewModelProvider? = null     // 通信相关的ViewModel
+    private var applicationProvider: ViewModelProvider? = null  // 通信相关的ViewModel
     private var binding: ViewDataBinding? = null
 
-    protected abstract fun initViewModel()
+    // 将DataBinding严格限制在基类中
     protected abstract fun getDataBindingConfig(): DataBindingConfig
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        initViewModel()
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -61,11 +56,6 @@ abstract class BaseFragment : Fragment() {
         super.onDestroyView()
         binding?.unbind()
         binding = null
-    }
-
-    protected fun <T : ViewModel> getFragmentScopeViewModel(modelClass: Class<T>): T {
-        if (fragmentProvider == null) fragmentProvider = ViewModelProvider(this)
-        return fragmentProvider!![modelClass]
     }
 
     protected fun <T : ViewModel> getActivityScopeViewModel(modelClass: Class<T>): T {

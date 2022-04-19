@@ -3,10 +3,15 @@
     <item
         android:id="@+id/host_fragment"
         android:icon="@drawable/tab_host_icon"
-        android:title="@string/tab_host_text"/>
+        android:title="@string/tab_host_text" />
 
     <item
         android:id="@+id/gallery_fragment"
         android:icon="@drawable/tab_gallery_icon"
-        android:title="@string/tab_gallery_text"/>
+        android:title="@string/tab_gallery_text" />
+
+    <item
+        android:id="@+id/official_fragment"
+        android:icon="@drawable/tab_official_icon"
+        android:title="@string/tab_official_text" />
 </menu>

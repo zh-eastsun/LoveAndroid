@@ -19,4 +19,9 @@
         tools:layout="@layout/fragment_gallery">
     </fragment>
 
+    <fragment
+        android:id="@+id/official_fragment"
+        android:name="com.zdy.android.app.loveandroid.ui.fragment.official.OfficialFragment"
+        android:label="official_fragment"
+        tools:layout="@layout/fragment_official"/>
 </navigation>
