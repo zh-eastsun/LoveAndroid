@@ -20,7 +20,7 @@ class HostFragment : BaseFragment() {
     override fun getDataBindingConfig(): DataBindingConfig =
         DataBindingConfig(
             R.layout.fragment_host,
-            BR.hostFragmentViewModel,
+            BR.hostViewModel,
             hostViewModel
         )
 }

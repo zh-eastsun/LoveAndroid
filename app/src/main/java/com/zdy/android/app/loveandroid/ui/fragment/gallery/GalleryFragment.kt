@@ -20,7 +20,7 @@ class GalleryFragment : BaseFragment() {
     override fun getDataBindingConfig(): DataBindingConfig =
         DataBindingConfig(
             R.layout.fragment_gallery,
-            BR.galleryFragmentViewModel,
+            BR.galleryViewModel,
             galleryViewModel
         )
 }

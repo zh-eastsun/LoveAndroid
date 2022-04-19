@@ -19,7 +19,7 @@ class OfficialFragment : BaseFragment() {
 
     override fun getDataBindingConfig(): DataBindingConfig = DataBindingConfig(
         R.layout.fragment_official,
-        BR.officialFragmentViewModel,
+        BR.officialViewModel,
         officialViewModel
     )
 }

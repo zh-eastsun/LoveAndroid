@@ -18,7 +18,7 @@ class SystemFragment : BaseFragment(){
 
     override fun getDataBindingConfig(): DataBindingConfig = DataBindingConfig(
         R.layout.fragment_system,
-        BR.systemFragmentViewModel,
+        BR.systemViewModel,
         systemViewModel
     )
 }
