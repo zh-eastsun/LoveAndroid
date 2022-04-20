@@ -6,8 +6,8 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.zdy.android.app.loveandroid.BR
 import com.zdy.android.app.loveandroid.R
-import com.zdy.android.app.loveandroid.base.BaseActivity
-import com.zdy.android.app.loveandroid.base.binding.DataBindingConfig
+import com.zdy.android.application.architecture.common.base.BaseActivity
+import com.zdy.android.application.architecture.common.base.binding.DataBindingConfig
 
 class LauncherActivity : BaseActivity() {
 

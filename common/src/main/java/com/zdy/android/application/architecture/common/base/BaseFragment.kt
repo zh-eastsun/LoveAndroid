@@ -1,50 +1,59 @@
-package com.zdy.android.app.loveandroid.base
+package com.zdy.android.application.architecture.common.base
 
 import android.os.Bundle
+import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
+import androidx.core.util.forEach
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.zdy.android.app.loveandroid.R
-import com.zdy.android.app.loveandroid.base.binding.DataBindingConfig
+import com.zdy.android.application.architecture.common.R
+import com.zdy.android.application.architecture.common.base.binding.DataBindingConfig
 
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseFragment : Fragment() {
 
-    private val TAG = this.javaClass.simpleName
     private var tvStrictModeTip: TextView? = null
-    private var activityProvider: ViewModelProvider? = null
-    private var applicationProvider: ViewModelProvider? = null
+    private var activityProvider: ViewModelProvider? = null     // 通信相关的ViewModel
+    private var applicationProvider: ViewModelProvider? = null  // 通信相关的ViewModel
     private var binding: ViewDataBinding? = null
 
-    protected abstract fun initViewModel()
+    // 将DataBinding严格限制在基类中
     protected abstract fun getDataBindingConfig(): DataBindingConfig
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        initViewModel()
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        Log.d("BaseFragment", "onCreateView: ")
         // 将所有DataBinding相关操作都提取到基类中
         val bindingConfig = getDataBindingConfig()
         val dataBinding =
-            DataBindingUtil.setContentView<ViewDataBinding>(this, bindingConfig.layout)
+            DataBindingUtil.inflate<ViewDataBinding>(
+                inflater,
+                bindingConfig.layout,
+                container,
+                false
+            )
         dataBinding.lifecycleOwner = this
         dataBinding.setVariable(bindingConfig.vmVariableId, bindingConfig.stateViewModel)
         val bindingParams = bindingConfig.bindingParams
 
         // 遍历dataBinding中的数据
-        var index = 0
-        val size = bindingParams.size()
-        while(index < size) {
-            dataBinding?.setVariable(bindingParams.keyAt(index), bindingParams.valueAt(index))
-            ++index
+        bindingParams.forEach { key, _ ->
+            dataBinding.setVariable(bindingParams.keyAt(key), bindingParams.valueAt(key))
         }
         this.binding = dataBinding
+        return binding!!.root
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
         binding?.unbind()
         binding = null
     }
@@ -56,13 +65,14 @@ abstract class BaseActivity : AppCompatActivity() {
 
     protected fun <T : ViewModel> getApplicationScopeViewModel(modelClass: Class<T>): T {
         if (applicationProvider == null)
-            applicationProvider = ViewModelProvider(applicationContext as MyApplication)
+            applicationProvider =
+                ViewModelProvider(requireActivity().applicationContext as MyApplication)
         return applicationProvider!![modelClass]
     }
 
     protected fun getBinding(): ViewDataBinding? {
         if (isDebug() && binding != null && tvStrictModeTip == null) {
-            tvStrictModeTip = TextView(applicationContext)
+            tvStrictModeTip = TextView(requireActivity().applicationContext)
             tvStrictModeTip?.let {
                 it.alpha = 0.4f
                 it.setPadding(
@@ -87,5 +97,5 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
     private fun isDebug() =
-        application.applicationInfo != null && (application.applicationInfo.flags and 2) != 0
+        requireActivity().application!!.applicationInfo != null && (requireActivity().application.applicationInfo.flags and 2) != 0
 }

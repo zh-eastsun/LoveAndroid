@@ -1,4 +1,4 @@
-package com.zdy.android.app.loveandroid.base.binding
+package com.zdy.android.application.architecture.common.base.binding
 
 import android.util.SparseArray
 import androidx.lifecycle.ViewModel

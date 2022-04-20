@@ -3,8 +3,8 @@ package com.zdy.android.app.loveandroid.ui.fragment.host
 import androidx.fragment.app.viewModels
 import com.zdy.android.app.loveandroid.BR
 import com.zdy.android.app.loveandroid.R
-import com.zdy.android.app.loveandroid.base.BaseFragment
-import com.zdy.android.app.loveandroid.base.binding.DataBindingConfig
+import com.zdy.android.application.architecture.common.base.BaseFragment
+import com.zdy.android.application.architecture.common.base.binding.DataBindingConfig
 
 /**
  * 首页页面

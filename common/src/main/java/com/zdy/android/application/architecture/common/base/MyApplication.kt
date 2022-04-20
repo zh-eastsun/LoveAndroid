@@ -1,4 +1,4 @@
-package com.zdy.android.app.loveandroid.base
+package com.zdy.android.application.architecture.common.base
 
 import android.app.Application
 import androidx.lifecycle.ViewModelStore

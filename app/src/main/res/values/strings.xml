@@ -2,8 +2,6 @@
     <string name="app_name">LoveAndroid</string>
     <string name="app_name_debug">LoveAndroid-Debug</string>
 
-    <string name="debug_databinding_warning">%s 未遵循DataBinding严格模式，有空安全风险</string>
-
     <string name="tab_host_text">主页</string>
     <string name="tab_gallery_text">广场</string>
     <string name="tab_official_text">公众号</string>
