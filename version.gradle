@@ -3,6 +3,7 @@ ext {
     def retrofit_version = "2.9.0"
     def kotlin_coroutines_version = "1.5.0"
     def androidx_lifecycle_version = "2.4.1"
+    def glide_version = "4.13.1"
     deps = [
             // retrofit
             "retrofit" : "com.squareup.retrofit2:retrofit:$retrofit_version",
@@ -24,6 +25,9 @@ ext {
             "navigation-common-ktx" : "android.arch.navigation:navigation-common-ktx:$navigation_version",
             "navigation-runtime-ktx" : "android.arch.navigation:navigation-runtime-ktx:$navigation_version",
             "navigation-dynamic-features-fragment" : "androidx.navigation:navigation-dynamic-features-fragment:$navigation_version",
+
+            // others
+            "glide" : "com.github.bumptech.glide:glide:$glide_version"
     ]
 
     android = [

@@ -24,6 +24,7 @@ abstract class BaseFragment : Fragment() {
 
     // 将DataBinding严格限制在基类中
     protected abstract fun getDataBindingConfig(): DataBindingConfig
+    protected open fun initView(root: View) {}
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -49,7 +50,9 @@ abstract class BaseFragment : Fragment() {
             dataBinding.setVariable(bindingParams.keyAt(key), bindingParams.valueAt(key))
         }
         this.binding = dataBinding
-        return binding!!.root
+        val root = binding!!.root
+        initView(root)
+        return root
     }
 
     override fun onDestroyView() {

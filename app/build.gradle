@@ -54,4 +54,6 @@ dependencies {
     implementation rootProject.ext.deps["navigation-fragment-ktx"]
     implementation rootProject.ext.deps["navigation-ui-ktx"]
     implementation rootProject.ext.deps["navigation-dynamic-features-fragment"]
+
+    implementation rootProject.ext.deps["glide"]
 }
