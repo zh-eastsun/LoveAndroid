@@ -49,6 +49,15 @@ abstract class BaseActivity : AppCompatActivity() {
         binding = null
     }
 
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        // todo 处理权限请求返回码
+    }
+
     protected fun <T : ViewModel> getActivityScopeViewModel(modelClass: Class<T>): T {
         if (activityProvider == null) activityProvider = ViewModelProvider(this)
         return activityProvider!![modelClass]
