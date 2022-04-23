@@ -1,11 +1,9 @@
 package com.zdy.android.app.loveandroid.ui.fragment.host
 
-import android.view.View
 import androidx.fragment.app.viewModels
-import androidx.viewpager.widget.ViewPager
 import com.zdy.android.app.loveandroid.BR
 import com.zdy.android.app.loveandroid.R
-import com.zdy.android.app.loveandroid.adapter.BannerAdapter
+import com.zdy.android.app.loveandroid.adapter.AdvertiseBannerAdapter
 import com.zdy.android.application.architecture.common.base.BaseFragment
 import com.zdy.android.application.architecture.common.base.binding.DataBindingConfig
 
@@ -25,10 +23,5 @@ class HostFragment : BaseFragment() {
             R.layout.fragment_host,
             BR.hostViewModel,
             hostViewModel
-        )
-
-    override fun initView(view: View) {
-        val viewpager = view.findViewById<ViewPager>(R.id.viewpager)
-        viewpager.adapter = BannerAdapter(listOf(1,2,3))
-    }
+        ).addBindingParam(BR.bannerAdapter, AdvertiseBannerAdapter())
 }
