@@ -4,6 +4,7 @@ ext {
     def kotlin_coroutines_version = "1.5.0"
     def androidx_lifecycle_version = "2.4.1"
     def glide_version = "4.13.1"
+    def leak_canary_version = "2.7"
     deps = [
             // retrofit
             "retrofit" : "com.squareup.retrofit2:retrofit:$retrofit_version",
@@ -27,7 +28,8 @@ ext {
             "navigation-dynamic-features-fragment" : "androidx.navigation:navigation-dynamic-features-fragment:$navigation_version",
 
             // others
-            "glide" : "com.github.bumptech.glide:glide:$glide_version"
+            "glide" : "com.github.bumptech.glide:glide:$glide_version",
+            "leak-canary" : "com.squareup.leakcanary:leakcanary-android:$leak_canary_version",
     ]
 
     android = [

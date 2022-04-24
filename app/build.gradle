@@ -40,6 +40,8 @@ dependencies {
 
     // 基础架构
     implementation project(":common")
+    // 内存泄漏检测
+    debugImplementation rootProject.ext.deps["leak-canary"]
 
     implementation rootProject.ext.deps["activity-ktx"]
     implementation rootProject.ext.deps["lifecycle-runtime-ktx"]
