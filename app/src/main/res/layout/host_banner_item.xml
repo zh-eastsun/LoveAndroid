@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="itemData"
+            type="String" />
+    </data>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="默认数据"
+            android:text="@{itemData}"
             android:gravity="center"/>
 
     </LinearLayout>

@@ -8,11 +8,11 @@ import com.zdy.android.application.architecture.common.base.adapter.SimpleDataBi
 
 class HostBannerAdapter(context: Context) : SimpleDataBindingAdapter<String, HostBannerItemBinding>(
     context,
-    R.layout.host_banner_item,
+    // todo 要替换此处的比较工具
     DiffUtils.mTestStringItemCallback
 ) {
     override fun getLayoutResId(viewType: Int): Int {
-        TODO("Not yet implemented")
+        return R.layout.host_banner_item
     }
 
     override fun onBindItem(
@@ -20,6 +20,6 @@ class HostBannerAdapter(context: Context) : SimpleDataBindingAdapter<String, Hos
         itemData: String,
         itemViewHolder: RecyclerView.ViewHolder
     ) {
-        TODO("Not yet implemented")
+        itemDataBinding.itemData = "$itemData: ${itemViewHolder.adapterPosition}"
     }
 }

@@ -18,12 +18,12 @@ import androidx.recyclerview.widget.RecyclerView
  * @author zhangdongyang
  */
 abstract class BaseDataBindingAdapter<M, B : ViewDataBinding>(
-    protected val mContext: Context,
+    private val mContext: Context,
     diffCallback: DiffUtil.ItemCallback<M>
 ) : ListAdapter<M, RecyclerView.ViewHolder>(diffCallback) {
 
-    protected val onItemClickListener: OnItemClickListener<M>? = null
-    protected val onItemLongClickListener: OnItemLongClickListener<M>? = null
+    var onItemClickListener: OnItemClickListener<M>? = null
+    var onItemLongClickListener: OnItemLongClickListener<M>? = null
 
     @LayoutRes
     abstract fun getLayoutResId(viewType: Int): Int
@@ -44,7 +44,7 @@ abstract class BaseDataBindingAdapter<M, B : ViewDataBinding>(
         holder.itemView.setOnClickListener {
             if (this.onItemClickListener != null) {
                 val position = holder.adapterPosition
-                onItemClickListener.onItemClick(
+                onItemClickListener!!.onItemClick(
                     holder.itemView.id,
                     getItem(position) as M,
                     position
@@ -54,7 +54,7 @@ abstract class BaseDataBindingAdapter<M, B : ViewDataBinding>(
         holder.itemView.setOnLongClickListener {
             if (this.onItemLongClickListener != null) {
                 val position = holder.adapterPosition
-                onItemLongClickListener.onItemLongClick(
+                onItemLongClickListener!!.onItemLongClick(
                     holder.itemView.id,
                     getItem(position) as M,
                     position
