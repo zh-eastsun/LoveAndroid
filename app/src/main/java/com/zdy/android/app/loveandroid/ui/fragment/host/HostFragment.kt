@@ -3,7 +3,6 @@ package com.zdy.android.app.loveandroid.ui.fragment.host
 import androidx.fragment.app.viewModels
 import com.zdy.android.app.loveandroid.BR
 import com.zdy.android.app.loveandroid.R
-import com.zdy.android.app.loveandroid.adapter.AdvertiseBannerAdapter
 import com.zdy.android.application.architecture.common.base.BaseFragment
 import com.zdy.android.application.architecture.common.base.binding.DataBindingConfig
 
@@ -23,5 +22,5 @@ class HostFragment : BaseFragment() {
             R.layout.fragment_host,
             BR.hostViewModel,
             hostViewModel
-        ).addBindingParam(BR.bannerAdapter, AdvertiseBannerAdapter())
+        )
 }
