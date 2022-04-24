@@ -7,5 +7,5 @@ import retrofit2.http.GET
 
 interface HostServices {
     @GET("banner/json")
-    suspend fun getBanner(): Flow<List<DataResult<HostBannerBean>>>
+    suspend fun getBanner(): Flow<DataResult<List<HostBannerBean>>>
 }
