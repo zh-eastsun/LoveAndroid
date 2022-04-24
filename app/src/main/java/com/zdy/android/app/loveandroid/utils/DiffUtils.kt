@@ -1,4 +1,4 @@
-package com.zdy.android.app.loveandroid.adapter
+package com.zdy.android.app.loveandroid.utils
 
 import androidx.recyclerview.widget.DiffUtil
 

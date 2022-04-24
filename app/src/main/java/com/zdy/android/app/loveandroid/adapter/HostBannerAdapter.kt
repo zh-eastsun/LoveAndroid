@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.recyclerview.widget.RecyclerView
 import com.zdy.android.app.loveandroid.R
 import com.zdy.android.app.loveandroid.databinding.HostBannerItemBinding
+import com.zdy.android.app.loveandroid.utils.DiffUtils
 import com.zdy.android.application.architecture.common.base.adapter.SimpleDataBindingAdapter
 
 class HostBannerAdapter(context: Context) : SimpleDataBindingAdapter<String, HostBannerItemBinding>(
