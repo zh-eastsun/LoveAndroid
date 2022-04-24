@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- 要修改此处绑定的数据类型 -->
     <data>
         <variable
             name="itemData"
@@ -16,7 +17,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@{itemData}"
-            android:gravity="center"/>
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:background="@color/black"/>
 
     </LinearLayout>
 </layout>

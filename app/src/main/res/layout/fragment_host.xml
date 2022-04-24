@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="hostViewModel"
             type="com.zdy.android.app.loveandroid.ui.fragment.host.HostViewModel" />
@@ -17,13 +18,19 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/viewpager"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            adapter="@{bannerAdapter}"
             android:layout_height="200dp"
             android:layout_margin="10dp"
-            android:elevation="5dp"/>
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp">
 
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewpager"
+                adapter="@{bannerAdapter}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </androidx.cardview.widget.CardView>
     </LinearLayout>
 </layout>
