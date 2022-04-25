@@ -49,6 +49,8 @@ dependencies {
 
     implementation rootProject.ext.deps["retrofit"]
     implementation rootProject.ext.deps["converter-gson"]
+    implementation rootProject.ext.deps["okhttp"]
+    implementation rootProject.ext.deps["logging-interceptor"]
 
     implementation rootProject.ext.deps["coroutines-core"]
     implementation rootProject.ext.deps["coroutines-android"]
