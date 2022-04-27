@@ -1,11 +1,15 @@
 package com.zdy.android.app.loveandroid.api
 
-import com.zdy.android.app.loveandroid.bean.HostBannerBean
-import com.zdy.android.application.architecture.common.data.response.DataResult
-import kotlinx.coroutines.flow.Flow
+import okhttp3.ResponseBody
+import retrofit2.Call
 import retrofit2.http.GET
 
-interface HostServices {
+interface WanServices {
+
+    companion object{
+        const val BASE_URL = "https://www.wanandroid.com/"
+    }
+
     @GET("banner/json")
-    suspend fun getBanner(): Flow<DataResult<List<HostBannerBean>>>
+    suspend fun getBanner(): Call<ResponseBody>
 }
