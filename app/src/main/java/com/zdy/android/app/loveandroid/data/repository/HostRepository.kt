@@ -1,6 +1,6 @@
 package com.zdy.android.app.loveandroid.data.repository
 
-import com.zdy.android.app.loveandroid.api.WanServices
+import com.zdy.android.app.loveandroid.data.api.WanServices
 import com.zdy.android.app.loveandroid.data.bean.HostBannerData
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -35,7 +35,7 @@ class HostRepository {
 
     suspend fun requestBannerData(): List<HostBannerData>? {
         val service = retrofit.create(WanServices::class.java)
-        val response = service.getBanner().execute().body()
-        return if(response?.errorCode == 0) response.data else null
+        val response = service.getBanner()
+        return if(response.body()?.errorCode == 0) response.body()?.data else null
     }
 }

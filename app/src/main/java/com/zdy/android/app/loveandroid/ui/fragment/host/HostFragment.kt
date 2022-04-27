@@ -1,5 +1,10 @@
 package com.zdy.android.app.loveandroid.ui.fragment.host
 
+import android.os.Bundle
+import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.zdy.android.app.loveandroid.BR
@@ -16,6 +21,8 @@ import com.zdy.android.application.architecture.common.base.binding.DataBindingC
  * @author zhangdongyang
  */
 class HostFragment : BaseFragment() {
+
+    private val TAG = this::class.java.simpleName
 
     // 保存状态的ViewModel
     private val mState: HostViewModel by viewModels()
@@ -39,6 +46,20 @@ class HostFragment : BaseFragment() {
             mState
         ).addBindingParam(BR.bannerAdapter, adapter)
             .addBindingParam(BR.stateViewModel, mState)
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        Log.e("hello","data:")
+        val root = super.onCreateView(inflater, container, savedInstanceState)
+        mState.hostBannerData.observe(viewLifecycleOwner){
+            Log.e("hello","data:$it")
+        }
+        mState.loadBannerData()
+        return root
     }
 
 }
