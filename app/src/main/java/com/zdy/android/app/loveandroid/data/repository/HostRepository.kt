@@ -1,6 +1,7 @@
 package com.zdy.android.app.loveandroid.data.repository
 
 import com.zdy.android.app.loveandroid.api.WanServices
+import com.zdy.android.app.loveandroid.data.bean.HostBannerData
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -13,7 +14,7 @@ import java.util.concurrent.TimeUnit
  * @date 2022/04/25
  * @author zhangdongyang
  */
-object HostRepository {
+class HostRepository {
 
     private val retrofit: Retrofit by lazy {
         val logging = HttpLoggingInterceptor().apply { HttpLoggingInterceptor.Level.BODY }
@@ -30,5 +31,11 @@ object HostRepository {
             .client(client)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
+    }
+
+    suspend fun requestBannerData(): List<HostBannerData>? {
+        val service = retrofit.create(WanServices::class.java)
+        val response = service.getBanner().execute().body()
+        return if(response?.errorCode == 0) response.data else null
     }
 }

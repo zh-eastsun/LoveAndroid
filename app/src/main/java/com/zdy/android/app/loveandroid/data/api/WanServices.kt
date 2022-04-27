@@ -1,6 +1,6 @@
 package com.zdy.android.app.loveandroid.api
 
-import okhttp3.ResponseBody
+import com.zdy.android.app.loveandroid.data.bean.HostBannerResponse
 import retrofit2.Call
 import retrofit2.http.GET
 
@@ -11,5 +11,5 @@ interface WanServices {
     }
 
     @GET("banner/json")
-    suspend fun getBanner(): Call<ResponseBody>
+    suspend fun getBanner(): Call<HostBannerResponse>
 }

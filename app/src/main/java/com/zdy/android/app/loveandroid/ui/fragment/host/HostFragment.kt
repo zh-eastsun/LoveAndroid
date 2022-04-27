@@ -17,8 +17,8 @@ import com.zdy.android.application.architecture.common.base.binding.DataBindingC
  */
 class HostFragment : BaseFragment() {
 
-    // 业务自己的ViewModel
-    private val hostViewModel: HostViewModel by viewModels()
+    // 保存状态的ViewModel
+    private val mState: HostViewModel by viewModels()
 
     override fun getDataBindingConfig(): DataBindingConfig {
 
@@ -28,16 +28,17 @@ class HostFragment : BaseFragment() {
                 Toast.makeText(requireContext(), "点击了第${position}个元素", Toast.LENGTH_SHORT).show()
             }
         }
-        val data = MutableList(40){
+        val data = MutableList(40) {
             "数据$it"
         }
         adapter.submitList(data)
 
         return DataBindingConfig(
             R.layout.fragment_host,
-            BR.hostViewModel,
-            hostViewModel
+            BR.stateViewModel,
+            mState
         ).addBindingParam(BR.bannerAdapter, adapter)
+            .addBindingParam(BR.stateViewModel, mState)
     }
 
 }
