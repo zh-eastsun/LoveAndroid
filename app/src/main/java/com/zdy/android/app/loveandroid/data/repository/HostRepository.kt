@@ -1,4 +1,4 @@
-package com.zdy.android.app.loveandroid.repository
+package com.zdy.android.app.loveandroid.data.repository
 
 import com.zdy.android.app.loveandroid.api.WanServices
 import okhttp3.OkHttpClient

@@ -1,4 +1,4 @@
-package com.zdy.android.app.loveandroid.bean
+package com.zdy.android.app.loveandroid.data.bean
 
 import com.google.gson.annotations.SerializedName
 
