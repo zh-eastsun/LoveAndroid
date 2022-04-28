@@ -1,24 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!-- 要修改此处绑定的数据类型 -->
     <data>
+
         <variable
             name="data"
             type="com.zdy.android.app.loveandroid.data.bean.HostBannerData" />
     </data>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
         <ImageView
+            imagePath="@{data.imagePath}"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            imagePath="@{data.imagePath}"
             android:gravity="center"
-            android:scaleType="center"/>
+            android:scaleType="center" />
 
-    </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginHorizontal="10dp"
+            android:textColor="@color/white"
+            android:background="#aa333333"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@{data.title}"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
