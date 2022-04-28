@@ -1,4 +1,4 @@
-package com.zdy.android.app.loveandroid.ui.fragment.host
+package com.zdy.android.app.loveandroid.ui.state
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData

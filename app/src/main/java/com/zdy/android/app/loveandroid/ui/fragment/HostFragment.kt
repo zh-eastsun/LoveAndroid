@@ -1,4 +1,4 @@
-package com.zdy.android.app.loveandroid.ui.fragment.host
+package com.zdy.android.app.loveandroid.ui.fragment
 
 import android.os.Bundle
 import android.util.Log
@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import com.zdy.android.app.loveandroid.BR
 import com.zdy.android.app.loveandroid.R
 import com.zdy.android.app.loveandroid.adapter.HostBannerAdapter
+import com.zdy.android.app.loveandroid.ui.state.HostViewModel
 import com.zdy.android.application.architecture.common.base.BaseFragment
 import com.zdy.android.application.architecture.common.base.adapter.BaseDataBindingAdapter.OnItemClickListener
 import com.zdy.android.application.architecture.common.base.binding.DataBindingConfig

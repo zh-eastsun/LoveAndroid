@@ -1,8 +1,9 @@
-package com.zdy.android.app.loveandroid.ui.fragment.gallery
+package com.zdy.android.app.loveandroid.ui.fragment
 
 import androidx.fragment.app.viewModels
 import com.zdy.android.app.loveandroid.BR
 import com.zdy.android.app.loveandroid.R
+import com.zdy.android.app.loveandroid.ui.state.GalleryViewModel
 import com.zdy.android.application.architecture.common.base.BaseFragment
 import com.zdy.android.application.architecture.common.base.binding.DataBindingConfig
 

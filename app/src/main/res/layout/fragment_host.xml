@@ -6,7 +6,7 @@
 
         <variable
             name="stateViewModel"
-            type="com.zdy.android.app.loveandroid.ui.fragment.host.HostViewModel" />
+            type="com.zdy.android.app.loveandroid.ui.state.HostViewModel" />
 
         <variable
             name="bannerAdapter"

@@ -7,33 +7,33 @@
 
     <fragment
         android:id="@+id/host_fragment"
-        android:name="com.zdy.android.app.loveandroid.ui.fragment.host.HostFragment"
+        android:name="com.zdy.android.app.loveandroid.ui.fragment.HostFragment"
         android:label="host_fragment"
         tools:layout="@layout/fragment_host">
     </fragment>
 
     <fragment
         android:id="@+id/gallery_fragment"
-        android:name="com.zdy.android.app.loveandroid.ui.fragment.gallery.GalleryFragment"
+        android:name="com.zdy.android.app.loveandroid.ui.fragment.GalleryFragment"
         android:label="gallery_fragment"
         tools:layout="@layout/fragment_gallery">
     </fragment>
 
     <fragment
         android:id="@+id/official_fragment"
-        android:name="com.zdy.android.app.loveandroid.ui.fragment.official.OfficialFragment"
+        android:name="com.zdy.android.app.loveandroid.ui.fragment.OfficialFragment"
         android:label="official_fragment"
         tools:layout="@layout/fragment_official"/>
 
     <fragment
         android:id="@+id/system_fragment"
-        android:name="com.zdy.android.app.loveandroid.ui.fragment.system.SystemFragment"
+        android:name="com.zdy.android.app.loveandroid.ui.fragment.SystemFragment"
         android:label="system_fragment"
         tools:layout="@layout/fragment_system"/>
 
     <fragment
         android:id="@+id/project_fragment"
-        android:name="com.zdy.android.app.loveandroid.ui.fragment.project.ProjectFragment"
+        android:name="com.zdy.android.app.loveandroid.ui.fragment.ProjectFragment"
         android:label="project_fragment"
         tools:layout="@layout/fragment_project"/>
 </navigation>
