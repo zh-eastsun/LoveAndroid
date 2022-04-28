@@ -4,8 +4,8 @@
     <!-- 要修改此处绑定的数据类型 -->
     <data>
         <variable
-            name="itemData"
-            type="String" />
+            name="data"
+            type="com.zdy.android.app.loveandroid.data.bean.HostBannerData" />
     </data>
 
     <LinearLayout
@@ -13,13 +13,12 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@{itemData}"
-            android:textColor="@color/white"
+            imagePath="@{data.imagePath}"
             android:gravity="center"
-            android:background="@color/black"/>
+            android:scaleType="center"/>
 
     </LinearLayout>
 </layout>

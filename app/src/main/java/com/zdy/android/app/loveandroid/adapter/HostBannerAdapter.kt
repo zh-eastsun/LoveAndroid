@@ -3,14 +3,14 @@ package com.zdy.android.app.loveandroid.adapter
 import android.content.Context
 import androidx.recyclerview.widget.RecyclerView
 import com.zdy.android.app.loveandroid.R
+import com.zdy.android.app.loveandroid.data.bean.HostBannerData
 import com.zdy.android.app.loveandroid.databinding.HostBannerItemBinding
 import com.zdy.android.app.loveandroid.utils.DiffUtils
 import com.zdy.android.application.architecture.common.base.adapter.SimpleDataBindingAdapter
 
-class HostBannerAdapter(context: Context) : SimpleDataBindingAdapter<String, HostBannerItemBinding>(
+class HostBannerAdapter(context: Context) : SimpleDataBindingAdapter<HostBannerData, HostBannerItemBinding>(
     context,
-    // todo 要替换此处的比较工具
-    DiffUtils.mTestStringItemCallback
+    DiffUtils.mHostBannerItemCallback
 ) {
     override fun getLayoutResId(viewType: Int): Int {
         return R.layout.host_banner_item
@@ -18,9 +18,9 @@ class HostBannerAdapter(context: Context) : SimpleDataBindingAdapter<String, Hos
 
     override fun onBindItem(
         itemDataBinding: HostBannerItemBinding,
-        itemData: String,
+        itemData: HostBannerData,
         itemViewHolder: RecyclerView.ViewHolder
     ) {
-        itemDataBinding.itemData = "$itemData: ${itemViewHolder.adapterPosition}"
+        itemDataBinding.data = itemData
     }
 }
