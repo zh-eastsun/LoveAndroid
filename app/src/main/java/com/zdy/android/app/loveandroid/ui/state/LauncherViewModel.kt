@@ -1,4 +1,4 @@
-package com.zdy.android.app.loveandroid.ui.activity.launcher
+package com.zdy.android.app.loveandroid.ui.state
 
 import androidx.lifecycle.ViewModel
 

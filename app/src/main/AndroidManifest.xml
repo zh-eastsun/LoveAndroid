@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LoveAndroid">
         <activity
-            android:name="com.zdy.android.app.loveandroid.ui.activity.launcher.LauncherActivity"
+            android:name="com.zdy.android.app.loveandroid.ui.activity.LauncherActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
