@@ -6,7 +6,7 @@
         <!--视图对应的ViewModel-->
         <variable
             name="galleryViewModel"
-            type="com.zdy.android.app.loveandroid.ui.fragment.gallery.GalleryViewModel" />
+            type="com.zdy.android.app.loveandroid.ui.state.GalleryViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

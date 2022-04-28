@@ -5,7 +5,7 @@
     <data>
         <variable
             name="projectViewModel"
-            type="com.zdy.android.app.loveandroid.ui.fragment.project.ProjectViewModel" />
+            type="com.zdy.android.app.loveandroid.ui.state.ProjectViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

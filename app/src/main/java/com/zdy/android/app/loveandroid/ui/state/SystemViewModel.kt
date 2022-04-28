@@ -1,4 +1,4 @@
-package com.zdy.android.app.loveandroid.ui.fragment.system
+package com.zdy.android.app.loveandroid.ui.state
 
 import androidx.lifecycle.ViewModel
 
