@@ -1,6 +1,5 @@
 package com.zdy.android.app.loveandroid.ui.state
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -8,13 +7,27 @@ import com.zdy.android.app.loveandroid.data.bean.HostBannerData
 import com.zdy.android.app.loveandroid.data.repository.HostRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
+/**
+ * 主页数据模型
+ *
+ * @date 2022/04/29
+ * @author zhangdongyang
+ */
 class HostViewModel : ViewModel() {
+    // todo 改造数据仓库，使其成为唯一可信源
+    // 数据仓库
+    private val repository = HostRepository()
+    // 数据模型
+    val hostBannerData by lazy {
+        object : MutableLiveData<List<HostBannerData>>() {
+            init {
+                value = ArrayList()
+            }
+        }
+    }
 
-    val repository = HostRepository()
-    val hostBannerData: MutableLiveData<List<HostBannerData>> = MutableLiveData()
-
+    // 加载轮播图数据
     fun loadBannerData() {
         viewModelScope.launch(Dispatchers.IO) {
             val res = repository.requestBannerData()

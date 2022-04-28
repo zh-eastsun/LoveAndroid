@@ -28,6 +28,7 @@
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/viewpager"
                 adapter="@{bannerAdapter}"
+                submitList="@{stateViewModel.hostBannerData}"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 

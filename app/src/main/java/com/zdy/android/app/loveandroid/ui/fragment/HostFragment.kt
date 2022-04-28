@@ -1,18 +1,13 @@
 package com.zdy.android.app.loveandroid.ui.fragment
 
 import android.os.Bundle
-import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.zdy.android.app.loveandroid.BR
 import com.zdy.android.app.loveandroid.R
 import com.zdy.android.app.loveandroid.adapter.HostBannerAdapter
 import com.zdy.android.app.loveandroid.ui.state.HostViewModel
 import com.zdy.android.application.architecture.common.base.BaseFragment
-import com.zdy.android.application.architecture.common.base.adapter.BaseDataBindingAdapter.OnItemClickListener
 import com.zdy.android.application.architecture.common.base.binding.DataBindingConfig
 
 /**
@@ -29,38 +24,17 @@ class HostFragment : BaseFragment() {
     private val mState: HostViewModel by viewModels()
 
     override fun getDataBindingConfig(): DataBindingConfig {
-
-        val adapter = HostBannerAdapter(requireContext())
-        adapter.onItemClickListener = object : OnItemClickListener<String> {
-            override fun onItemClick(viewId: Int, itemData: String, position: Int) {
-                Toast.makeText(requireContext(), "点击了第${position}个元素", Toast.LENGTH_SHORT).show()
-            }
-        }
-        val data = MutableList(40) {
-            "数据$it"
-        }
-        adapter.submitList(data)
-
-        return DataBindingConfig(
-            R.layout.fragment_host,
-            BR.stateViewModel,
-            mState
-        ).addBindingParam(BR.bannerAdapter, adapter)
+        val mAdapter = HostBannerAdapter(requireContext())
+        return DataBindingConfig(R.layout.fragment_host, BR.stateViewModel, mState)
+            .addBindingParam(BR.bannerAdapter, mAdapter)
             .addBindingParam(BR.stateViewModel, mState)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        Log.e("hello","data:")
-        val root = super.onCreateView(inflater, container, savedInstanceState)
-        mState.hostBannerData.observe(viewLifecycleOwner){
-            Log.e("hello","data:$it")
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        if(mState.hostBannerData.value?.size == 0) {
+            mState.loadBannerData()
         }
-        mState.loadBannerData()
-        return root
     }
 
 }
