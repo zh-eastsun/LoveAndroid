@@ -7,4 +7,6 @@
     <string name="tab_official_text">公众号</string>
     <string name="tab_system_text">体系</string>
     <string name="tab_project_text">项目</string>
+
+    <string name="network_error_tip">网络错误</string>
 </resources>

@@ -15,7 +15,7 @@ interface WanServices {
 
     // 主页轮播图
     @GET("banner/json")
-    suspend fun getBanner(): Response<WanResponse<HostBannerData>>
+    suspend fun getBanner(): Response<WanResponse<List<HostBannerData>>>
 
     // 主页文章
     @GET("article/list/{page}/json")
